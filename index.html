@@ -1,0 +1,76 @@
+<html><head>
+<title>Starting with React</title>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
+        let cars = ["vista","Zest","jeep","zen"];
+       var  eve = "Gym";
+       let score = 0;
+       let wicket = 0;
+
+const clickone = ()=>{
+    score = score + 1;
+     console.log(score);
+     ReactDOM.createRoot(document.getElementById("root")).render(<Sk/>);  
+}
+
+const scoring = (num)=>{
+    if(wicket < 10)
+    {
+        score += num;
+    ReactDOM.createRoot(document.getElementById("root")).render(<Sk/>);  
+    }
+    
+}
+
+const fallofwickets = ()=>{
+    if(wicket < 10)
+    {
+        wicket += 1;
+    ReactDOM.createRoot(document.getElementById("root")).render(<Sk/>);  
+    }
+    
+}
+
+        const Name = ()=>(
+<><p>This is name component {eve} </p>
+    <ul>
+        {cars.map((gadi)=><li>{gadi}</li>)}
+        </ul>
+</>
+        )
+      const Headin =  ()=>
+         (
+            <>
+            <h1>This is Shashwat</h1>
+            <p>learn React with me </p>
+            </>
+        )
+
+        const Sk = ()=>(
+            <>
+                   <h1>Score Keeper</h1>
+                   <br/>
+                   <h2>{score}/{wicket}</h2>
+                <button onClick={()=>scoring(1)}>1</button>
+                <button onClick={()=>scoring(2)}>2</button>
+                <button onClick={()=>scoring(3)}>3</button>
+                <button onClick={()=>scoring(4)}>4</button>
+                <button onClick={()=>scoring(5)}>5</button>
+                <button onClick={()=>scoring(6)}>6</button>
+                <button onClick={fallofwickets}>Wicket</button>
+            </>
+        )
+      
+        //ReactDOM.createRoot(document.getElementById("root")).render(<Headin/>);
+        ReactDOM.createRoot(document.getElementById("root")).render(<Sk/>);  
+   </script>
+
+</body>
+</html>
